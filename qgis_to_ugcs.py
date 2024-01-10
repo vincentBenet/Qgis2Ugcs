@@ -21,18 +21,13 @@
  *                                                                         *
  ***************************************************************************/
 """
-from PyQt5.QtWidgets import QFileDialog
+from PyQt5.QtWidgets import QDialog, QMessageBox
 from qgis.PyQt.QtCore import QSettings, QTranslator, QCoreApplication
 from qgis.PyQt.QtGui import QIcon
 from qgis.PyQt.QtWidgets import QAction
-from qgis.core import (
-    Qgis,
-    QgsProject,
-    QgsPathResolver,
-    QgsRasterLayer,
-    QgsRasterFileWriter,
-    QgsRectangle
-)
+
+from .source import load_ui
+from .source import execute_plugin
 
 # Initialize Qt resources from file resources.py
 from .resources import *
@@ -189,7 +184,6 @@ class QgisToUGCS:
 
     def run(self):
         """Run method that performs all the real work"""
-
         # Create the dialog with elements (after translation) and keep reference
         # Only create GUI ONCE in callback, so that it will only load when the plugin is started
         if self.first_start == True:
@@ -197,37 +191,21 @@ class QgisToUGCS:
             self.dlg = QgisToUGCSDialog()
 
         # show the dialog
-        layers = QgsProject.instance().mapLayers()
-        for layer_key, layer in layers.items():
-            if isinstance(layer, QgsRasterLayer):  # Raster
-                continue
-            elif layer.wkbType() == 1:  # Point
-                continue
-            elif layer.wkbType() == 2:  # Line
-                self.dlg.input_layer.addItem(layer_key)
-            elif layer.wkbType() == 3:  # Polygon
-                continue
-            elif layer.wkbType() == 100:  # No Geometry
-                continue
-            else:  # Custom Geometry
-                continue
-        self.dlg.output_button.clicked.connect(
-            lambda: self.dlg.output_path.setText(
-                QFileDialog.getSaveFileName(filter='*.json')[0]))
+        load_ui.main(self.dlg)
         self.dlg.show()
         # Run the dialog event loop
         result = self.dlg.exec_()
         # See if OK was pressed
         if result:
-            layer_input = self.dlg.input_layer.currentText()
-            layer_obj = layers[layer_input]
-            path_input = layer_obj.source().split("|")[0]
-            path_output = self.dlg.output_path.text()
-            print(f"{layer_input = }")
-            print(f"{path_input = }")
-            print(f"{path_output = }")
-            from .source import ugcs_mission_flight_creation
-            ugcs_mission_flight_creation.main(
-                path_export_mission=path_output,
-                path_gpkg=path_input,
-            )
+            path_output, path_input, path_template_mission = execute_plugin.main(self.dlg)
+
+            popup = QMessageBox()
+            popup.setIcon(QMessageBox.Information)
+            popup.setWindowTitle("QGIS to UGCS")
+            popup.setText("\n".join([
+                "Succes!!!",
+                f"Your file is exported at {path_output}",
+                f"From line {path_input}",
+                f"For version UGCS {path_template_mission.split('_')[-1].split('.json')[0]}",
+            ]))
+            popup.exec()

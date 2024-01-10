@@ -6,10 +6,8 @@ import os
 import numpy
 import geopandas
 
-PATH_TEMPLATE_MISSION = os.path.join(os.path.dirname(__file__), "ugcs_mission_flight_creation.json")
 
-
-def get_mission_template(path_template_mission=PATH_TEMPLATE_MISSION):
+def get_mission_template(path_template_mission):
     with open(path_template_mission, 'r') as file:
         mission_yaml = yaml.safe_load(file)
     return mission_yaml
@@ -19,7 +17,7 @@ def get_routes(mission):
     return mission["mission"]["routes"]
 
 
-def get_route_template(path_template_mission=PATH_TEMPLATE_MISSION):
+def get_route_template(path_template_mission):
     return get_routes(get_mission_template(path_template_mission))[0]
 
 
@@ -27,7 +25,7 @@ def get_segments(route):
     return route["segments"]
 
 
-def get_segment_template(path_template_mission=PATH_TEMPLATE_MISSION):
+def get_segment_template(path_template_mission):
     return get_segments(get_route_template(path_template_mission))[0]
 
 
@@ -35,7 +33,7 @@ def get_points(segment):
     return segment["polygon"]["points"]
 
 
-def get_point_template(path_template_mission=PATH_TEMPLATE_MISSION):
+def get_point_template(path_template_mission):
     return get_points(get_segment_template(path_template_mission))[0]
 
 
@@ -54,16 +52,16 @@ def add_point(segment, point):
     return segment
 
 
-def create_point(x, y, z=0):
-    point = get_point_template()
+def create_point(x, y, path_template_mission, z=0):
+    point = get_point_template(path_template_mission)
     point["latitude"] = x * math.pi / 180
     point["longitude"] = y * math.pi / 180
     point["altitude"] = z
     return point
 
 
-def create_segment(points, azimuth, speed, height, side):
-    segment = get_segment_template()
+def create_segment(points, azimuth, speed, height, side, path_template_mission):
+    segment = get_segment_template(path_template_mission)
     segment["polygon"]["points"] = points
     segment["parameters"]["directionAngle"] = azimuth
     segment["parameters"]["speed"] = speed
@@ -72,15 +70,15 @@ def create_segment(points, azimuth, speed, height, side):
     return segment
 
 
-def create_route(segments, name):
-    route = get_route_template()
+def create_route(segments, name, path_template_mission):
+    route = get_route_template(path_template_mission)
     route["name"] = name
     route["segments"] = segments
     return route
 
 
-def create_mission(routes):
-    mission = get_mission_template()
+def create_mission(routes, path_template_mission):
+    mission = get_mission_template(path_template_mission)
     mission["mission"]["routes"] = routes
     return mission
 
@@ -162,7 +160,7 @@ def export_mission(mission, path_export_mission):
         file.write(txt)
 
 
-def main(path_export_mission, path_gpkg, width=15, speed=2, height=5, side=2):
+def main(path_export_mission, path_gpkg, path_template_mission, width=15, speed=2, height=5, side=2):
     routes, epsg_projection = gpkg_to_route(path_gpkg)
     mission_routes = []
     for j, segments in enumerate(routes):
@@ -177,20 +175,22 @@ def main(path_export_mission, path_gpkg, width=15, speed=2, height=5, side=2):
             )
             mission_segments.append(
                 create_segment(
-                    [create_point(x, y) for x, y in polygon],
+                    [create_point(x, y, path_template_mission) for x, y in polygon],
                     azimuth,
                     speed,
                     height,
-                    side
+                    side,
+                    path_template_mission
                 )
             )
         mission_routes.append(
             create_route(
                 mission_segments,
-                f"z{j+1}.1"
+                f"z{j+1}.1",
+                path_template_mission
             )
         )
-    mission = create_mission(mission_routes)
+    mission = create_mission(mission_routes, path_template_mission)
     export_mission(mission, path_export_mission)
 
 
@@ -201,7 +201,6 @@ def gpkg_to_route(path_gpkg):
         raise Exception(f"Only projection EPSG, not {epsg_from}")
     routes = []
     for line in data.geometry:
-        print(line)
         x, y = line.xy
         route = numpy.array([x, y]).T
         routes.append(route)
@@ -218,4 +217,5 @@ if __name__ == "__main__":
             os.path.join(os.path.dirname(__file__), "ugcs_mission_flight_creation.gpkg")
             # r"C:\Users\VincentBenet\Documents\NAS_SKIPPERNDT\Share - SkipperNDT\GSDAL_MAP_Barbel_2024-01-15\Inputs\flights_32632.gpkg"
         ,
+        path_template_mission=os.path.join(os.path.dirname(__file__), "ugcs_mission_flight_creation.json")
     )
