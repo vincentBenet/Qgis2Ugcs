@@ -6,7 +6,7 @@
 name=QgisToUGCS
 qgisMinimumVersion=3.0
 description=A Plugin to create UGCS missions from GPKG layers
-version=1.0
+version=1.2
 author=Vincent Bénet
 email=vincent.benet@outlook.fr
 
