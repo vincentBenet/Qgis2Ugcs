@@ -1,4 +1,5 @@
 import os.path
+import geopandas
 from pathlib import Path
 
 from qgis.core import QgsProject
@@ -30,6 +31,8 @@ def combo_boxs(dialog):
     layers = QgsProject.instance().mapLayers()
     for layer_key, layer in layers.items():
         if isinstance(layer, QgsRasterLayer):  # Raster
+            continue
+        if geopandas.read_file(layer.source().split("|")[0]).crs.axis_info[0].unit_name not in ["meter", "metre"]:
             continue
         elif layer.wkbType() == 1:  # Point
             continue

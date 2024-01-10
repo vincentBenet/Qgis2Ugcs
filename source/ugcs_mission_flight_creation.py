@@ -197,8 +197,9 @@ def main(path_export_mission, path_gpkg, path_template_mission, width=15, speed=
 def gpkg_to_route(path_gpkg):
     data = geopandas.read_file(path_gpkg)
     epsg_from = str(data.geometry.crs)
-    if data.crs.axis_info[0].unit_name not in ["meter", "metre"]:
-        raise Exception(f"Only projection EPSG, not {epsg_from}")
+    unit = data.crs.axis_info[0].unit_name
+    if unit not in ["meter", "metre"]:
+        raise Exception(f"Only projected EPSG in meters, not {unit} from {epsg_from}")
     routes = []
     for line in data.geometry:
         x, y = line.xy
