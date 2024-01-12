@@ -5,6 +5,8 @@ import math
 import os
 import numpy
 import geopandas
+import pandas as pd
+
 
 
 def get_mission_template(path_template_mission):
@@ -61,6 +63,12 @@ def create_point(x, y, path_template_mission, z=0):
 
 
 def create_segment(points, azimuth, speed, height, side, path_template_mission):
+    if speed is None or pd.isnull(speed):
+        speed = 12
+    if height is None or pd.isnull(height):
+        height = 5
+    if side is None or pd.isnull(side):
+        side = 2
     segment = get_segment_template(path_template_mission)
     segment["polygon"]["points"] = points
     segment["parameters"]["directionAngle"] = azimuth
@@ -84,6 +92,8 @@ def create_mission(routes, path_template_mission):
 
 
 def create_polygon(point_start, point_end, width, elbow_start, elbow_end, epsg_projection):
+    if width is None or pd.isnull(width):
+        width = 15
     x1, y1 = point_start
     x2, y2 = point_end
 
@@ -160,8 +170,8 @@ def export_mission(mission, path_export_mission):
         file.write(txt)
 
 
-def main(path_export_mission, path_gpkg, path_template_mission, width=15, speed=2, height=5, side=2):
-    routes, epsg_projection = gpkg_to_route(path_gpkg)
+def main(path_export_mission, path_gpkg, path_template_mission, width=None, speed=None, height=None, side=None):
+    routes, epsg_projection, attributes = gpkg_to_route(path_gpkg)
     mission_routes = []
     for j, segments in enumerate(routes):
         mission_segments = []
@@ -170,16 +180,16 @@ def main(path_export_mission, path_gpkg, path_template_mission, width=15, speed=
                 segments[i], segments[i+1],
                 epsg_projection=epsg_projection,
                 elbow_start=i > 0,
-                elbow_end=i < len(segments) - 2,
-                width=width,
+                elbow_end=i < len(segments)-2,
+                width=attributes.get("width")[j] if "width" in attributes else width,
             )
             mission_segments.append(
                 create_segment(
                     [create_point(x, y, path_template_mission) for x, y in polygon],
                     azimuth,
-                    speed,
-                    height,
-                    side,
+                    attributes.get("speed")[j] if "speed" in attributes else speed,
+                    attributes.get("height")[j] if "height" in attributes else height,
+                    attributes.get("side")[j] if "side" in attributes else side,
                     path_template_mission
                 )
             )
@@ -205,18 +215,21 @@ def gpkg_to_route(path_gpkg):
         x, y = line.xy
         route = numpy.array([x, y]).T
         routes.append(route)
-    return routes, int(epsg_from[len("EPSG:"):])
+    attributes = {}
+    for col in data.columns.drop('geometry'):
+        attributes[col] = list(data[col])
+    return routes, int(epsg_from[len("EPSG:"):]), attributes
 
 
 if __name__ == "__main__":
     main(
         path_export_mission=
-            os.path.join(os.path.dirname(__file__), "mission_ugcs.json")
-            # r"C:\Users\VincentBenet\Documents\NAS_SKIPPERNDT\Share - SkipperNDT\GSDAL_MAP_Barbel_2024-01-15\FlightPlans\flights.json"
+            # os.path.join(os.path.dirname(__file__), "mission_ugcs.json")
+            r"C:\Users\VincentBenet\Desktop\mission.json"
         ,
         path_gpkg=
-            os.path.join(os.path.dirname(__file__), "ugcs_mission_flight_creation.gpkg")
-            # r"C:\Users\VincentBenet\Documents\NAS_SKIPPERNDT\Share - SkipperNDT\GSDAL_MAP_Barbel_2024-01-15\Inputs\flights_32632.gpkg"
+            # os.path.join(os.path.dirname(__file__), "ugcs_mission_flight_creation.gpkg")
+            r"C:\Users\VincentBenet\Desktop\bla.gpkg"
         ,
-        path_template_mission=os.path.join(os.path.dirname(__file__), "ugcs_mission_flight_creation.json")
+        path_template_mission=os.path.join(os.path.dirname(__file__), "template_ugcs_mission_4.20.json")
     )
