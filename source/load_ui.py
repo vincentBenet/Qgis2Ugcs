@@ -53,6 +53,8 @@ def combo_boxs(dialog):
         for file in sorted(os.listdir(os.path.dirname(__file__)))
         if file.startswith(start) and file.endswith(end)
     ]
+
+def combo_boxs_events(dialog)
     dialog.ugcs_version.currentTextChanged.connect(lambda: text_edit_template(dialog))
 
 
@@ -68,5 +70,5 @@ def text_edit(dialog):
 
 def main(dialog):
     buttons(dialog)
-    combo_boxs(dialog)
+    combo_boxs_events(dialog)
     text_edit(dialog)

@@ -1,0 +1,897 @@
+{
+  "version": {
+    "major": 4,
+    "minor": 20,
+    "build": 4762,
+    "component": "DATABASE"
+  },
+  "payloadProfiles": [
+    {
+      "name": "DJI Zenmuse H20T (Thermal)",
+      "shortName": null,
+      "payloadType": "CAMERA",
+      "imageKey": "dji_zenmuse_h20t",
+      "parameters": {
+        "weight": 0.828,
+        "frequency": 0.0,
+        "power": 0.0,
+        "trueFocalLength": 0.0135,
+        "sensorWidth": 0.00814655,
+        "sensorHeight": 0.00651724,
+        "sensorHorizontalPixels": 640.0,
+        "sensorVerticalPixels": 512.0,
+        "minTriggeringInterval": 1.0,
+        "scanningFov": null,
+        "scanningRange": null,
+        "scanningSpeed": null
+      }
+    },
+    {
+      "name": "DJI Zenmuse H20T/H20 (Wide)",
+      "shortName": null,
+      "payloadType": "CAMERA",
+      "imageKey": "dji_zenmuse_h20t",
+      "parameters": {
+        "weight": 0.828,
+        "frequency": 0.0,
+        "power": 0.0,
+        "trueFocalLength": 0.0045,
+        "sensorWidth": 0.0065625,
+        "sensorHeight": 0.00491864,
+        "sensorHorizontalPixels": 4056.0,
+        "sensorVerticalPixels": 3040.0,
+        "minTriggeringInterval": 1.0,
+        "scanningFov": null,
+        "scanningRange": null,
+        "scanningSpeed": null
+      }
+    },
+    {
+      "name": "DJI Zenmuse H20T/H20 (Zoom)",
+      "shortName": null,
+      "payloadType": "CAMERA",
+      "imageKey": "dji_zenmuse_h20t",
+      "parameters": {
+        "weight": 0.828,
+        "frequency": 0.0,
+        "power": 0.0,
+        "trueFocalLength": 0.00683,
+        "sensorWidth": 0.0095,
+        "sensorHeight": 0.0057,
+        "sensorHorizontalPixels": 5184.0,
+        "sensorVerticalPixels": 3888.0,
+        "minTriggeringInterval": 1.0,
+        "scanningFov": null,
+        "scanningRange": null,
+        "scanningSpeed": null
+      }
+    },
+    {
+      "name": "DJI Zenmuse P1 (24 mm)",
+      "shortName": null,
+      "payloadType": "CAMERA",
+      "imageKey": "dji_zenmuse_p1_24",
+      "parameters": {
+        "weight": 0.8,
+        "frequency": 0.0,
+        "power": 20.0,
+        "trueFocalLength": 0.024,
+        "sensorWidth": 0.0359,
+        "sensorHeight": 0.024,
+        "sensorHorizontalPixels": 8192.0,
+        "sensorVerticalPixels": 5460.0,
+        "minTriggeringInterval": 1.0,
+        "scanningFov": null,
+        "scanningRange": null,
+        "scanningSpeed": null
+      }
+    },
+    {
+      "name": "DJI Zenmuse P1 (35 mm)",
+      "shortName": null,
+      "payloadType": "CAMERA",
+      "imageKey": "dji_zenmuse_p1_35",
+      "parameters": {
+        "weight": 0.8,
+        "frequency": 0.0,
+        "power": 20.0,
+        "trueFocalLength": 0.035,
+        "sensorWidth": 0.0359,
+        "sensorHeight": 0.024,
+        "sensorHorizontalPixels": 8192.0,
+        "sensorVerticalPixels": 5460.0,
+        "minTriggeringInterval": 1.0,
+        "scanningFov": null,
+        "scanningRange": null,
+        "scanningSpeed": null
+      }
+    },
+    {
+      "name": "DJI Zenmuse H20N (Wide)",
+      "shortName": null,
+      "payloadType": "CAMERA",
+      "imageKey": "dji_zenmuse_h20n",
+      "parameters": {
+        "weight": 0.878,
+        "frequency": 0.0,
+        "power": 0.0,
+        "trueFocalLength": 0.0045,
+        "sensorWidth": 0.00537,
+        "sensorHeight": 0.00429,
+        "sensorHorizontalPixels": 1920.0,
+        "sensorVerticalPixels": 1080.0,
+        "minTriggeringInterval": 3.0,
+        "scanningFov": null,
+        "scanningRange": null,
+        "scanningSpeed": null
+      }
+    },
+    {
+      "name": "DJI Zenmuse P1 (50 mm)",
+      "shortName": null,
+      "payloadType": "CAMERA",
+      "imageKey": "dji_zenmuse_p1_50",
+      "parameters": {
+        "weight": 0.8,
+        "frequency": 0.0,
+        "power": 20.0,
+        "trueFocalLength": 0.05,
+        "sensorWidth": 0.0359,
+        "sensorHeight": 0.024,
+        "sensorHorizontalPixels": 8192.0,
+        "sensorVerticalPixels": 5460.0,
+        "minTriggeringInterval": 1.0,
+        "scanningFov": null,
+        "scanningRange": null,
+        "scanningSpeed": null
+      }
+    },
+    {
+      "name": "DJI Zenmuse L1 (3:2)",
+      "shortName": null,
+      "payloadType": "CAMERA",
+      "imageKey": "dji_zenmuse_l1",
+      "parameters": {
+        "weight": 0.93,
+        "frequency": 0.0,
+        "power": 0.0,
+        "trueFocalLength": 0.014,
+        "sensorWidth": 0.0211,
+        "sensorHeight": 0.0141,
+        "sensorHorizontalPixels": 5472.0,
+        "sensorVerticalPixels": 3648.0,
+        "minTriggeringInterval": 1.0,
+        "scanningFov": null,
+        "scanningRange": null,
+        "scanningSpeed": null
+      }
+    },
+    {
+      "name": "DJI Zenmuse L2",
+      "shortName": null,
+      "payloadType": "CAMERA",
+      "imageKey": "dji_zenmuse_l2",
+      "parameters": {
+        "weight": 0.905,
+        "frequency": 0.0,
+        "power": 0.0,
+        "trueFocalLength": 0.00427,
+        "sensorWidth": 0.018,
+        "sensorHeight": 0.0135,
+        "sensorHorizontalPixels": 5280.0,
+        "sensorVerticalPixels": 3956.0,
+        "minTriggeringInterval": 0.7,
+        "scanningFov": null,
+        "scanningRange": null,
+        "scanningSpeed": null
+      }
+    },
+    {
+      "name": "DJI Zenmuse L1 (16:9)",
+      "shortName": null,
+      "payloadType": "CAMERA",
+      "imageKey": "dji_zenmuse_l1",
+      "parameters": {
+        "weight": 0.93,
+        "frequency": 0.0,
+        "power": 0.0,
+        "trueFocalLength": 0.014,
+        "sensorWidth": 0.0211,
+        "sensorHeight": 0.0119,
+        "sensorHorizontalPixels": 5472.0,
+        "sensorVerticalPixels": 3078.0,
+        "minTriggeringInterval": 1.0,
+        "scanningFov": null,
+        "scanningRange": null,
+        "scanningSpeed": null
+      }
+    },
+    {
+      "name": "DJI Zenmuse L1 (4:3)",
+      "shortName": null,
+      "payloadType": "CAMERA",
+      "imageKey": "dji_zenmuse_l1",
+      "parameters": {
+        "weight": 0.93,
+        "frequency": 0.0,
+        "power": 0.0,
+        "trueFocalLength": 0.014,
+        "sensorWidth": 0.0188,
+        "sensorHeight": 0.0141,
+        "sensorHorizontalPixels": 4864.0,
+        "sensorVerticalPixels": 3648.0,
+        "minTriggeringInterval": 1.0,
+        "scanningFov": null,
+        "scanningRange": null,
+        "scanningSpeed": null
+      }
+    }
+  ],
+  "vehicleProfiles": [
+    {
+      "name": "DJI Matrice 300 RTK from import 2024-01-04",
+      "vehicleType": "MULTICOPTER",
+      "modelKey": "dji_matrice_300",
+      "imageKey": "dji_matrice_300",
+      "platformCode": "DjiMatrice300RTK",
+      "primary": true,
+      "payloadProfiles": [
+        "DJI Zenmuse H20T/H20 (Wide)",
+        "DJI Zenmuse H20T/H20 (Zoom)",
+        "DJI Zenmuse H20T (Thermal)",
+        "DJI Zenmuse P1 (24 mm)",
+        "DJI Zenmuse P1 (35 mm)",
+        "DJI Zenmuse P1 (50 mm)",
+        "DJI Zenmuse L1 (16:9)",
+        "DJI Zenmuse L1 (3:2)",
+        "DJI Zenmuse L1 (4:3)",
+        "DJI Zenmuse L2",
+        "DJI Zenmuse H20N (Wide)"
+      ],
+      "parameters": {
+        "height": 0.43,
+        "width": 0.67,
+        "length": 0.81,
+        "maxClimbRate": 5.0,
+        "maxHorizontalSpeed": 15.0,
+        "maxAltitude": 7000.0,
+        "maxWaypoints": 65535.0,
+        "maxFlightTime": 3300.0,
+        "windResistance": 12.0,
+        "dryTakeoffWeight": 6.3,
+        "maxTakeoffWeight": 9.0,
+        "batteryWeight": 1.36,
+        "chargedBatteryVoltage": 52.8,
+        "dischargedBatteryVoltage": 46.8,
+        "normalBatteryVoltage": 49.2,
+        "lowBatteryVoltage": 48.0,
+        "lowGpsSatellites": 7.0,
+        "normalGpsSatellites": 9.0,
+        "safeDistanceToTerrain": 5.0,
+        "safeDistanceToObstacle": 20.0,
+        "waypointAcceptanceRadius": 2.0,
+        "fenceRadius": 2500.0,
+        "fenceAltitude": 150.0,
+        "lowTelemetryLevel": 50.0,
+        "normalTelemetryLevel": 70.0,
+        "defaultClimbRate": 2.0,
+        "defaultDescentRate": 1.0,
+        "glideSlope": null,
+        "defaultHorizontalSpeed": 5.0,
+        "landingGroundSpeed": null,
+        "maxAltitudeAgl": 120.0,
+        "landingFlareAltitude": null,
+        "landingFlareTime": null,
+        "minLandingPitch": null,
+        "landingFlareDamp": null,
+        "landingApproachAirspeed": null,
+        "landingSpeedWeighting": null,
+        "maxAutoFlightPitch": null,
+        "maxPitch": null,
+        "minThrottle": null,
+        "landingSinkRate": null,
+        "landingRangefinderEnabled": null,
+        "minRangefinderDistance": null,
+        "maxDescentRate": 3.0,
+        "lowBatteryPowerLevel": 30.0,
+        "normalBatteryPowerLevel": 40.0,
+        "maxRangefinderDistance": 30.0,
+        "minDistanceBetweenWaypoint": 1.0,
+        "initialSpeed": 2.0,
+        "waypointMaxWaitTime": 25.5,
+        "cornerRadius": 20.0
+      }
+    }
+  ],
+  "vehicles": [],
+  "mission": {
+    "name": "Mission (import 2024/01/05 10:01:00) (import 2024/01/05 11:31:31)",
+    "description": null,
+    "creationTime": 1703088883036,
+    "routes": [
+      {
+        "name": "z111.1",
+        "creationTime": 1703088907270,
+        "scheduledTime": 1703088905720,
+        "startDelay": 0.0,
+        "vehicleProfile": "DJI Matrice 300 RTK from import 2024-01-04",
+        "trajectoryType": null,
+        "safeAltitude": 50.0,
+        "maxAltitude": 50.0,
+        "initialSpeed": 2.0,
+        "maxSpeed": 0.0,
+        "failsafes": {
+          "rcLost": "GO_HOME",
+          "gpsLost": null,
+          "lowBattery": null,
+          "datalinkLost": null
+        },
+        "checkAerodromeNfz": true,
+        "checkCustomNfz": false,
+        "segments": [
+          {
+            "type": "AreaScan",
+            "actions": [],
+            "polygon": {
+              "points": [
+                {
+                  "latitude": 0.9290299909178925,
+                  "longitude": 0.13344145549884978,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290048248386753,
+                  "longitude": 0.1334784283529947,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290032387926871,
+                  "longitude": 0.13347553163105064,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290284048206683,
+                  "longitude": 0.13343855875971827,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290299909178925,
+                  "longitude": 0.13344145549884978,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                }
+              ]
+            },
+            "parameters": {
+              "speed": 2.0,
+              "wpTurnType": "STOP_AND_TURN",
+              "height": 5.0,
+              "altitudeType": "AGL",
+              "sideDistance": 2.0,
+              "directionAngle": 138.70494264839806,
+              "avoidObstacles": true,
+              "actionExecution": "ACTIONS_EVERY_POINT",
+              "overshoot": null,
+              "overshootSpeed": null,
+              "areaScanAllowPartialCalculation": false,
+              "tolerance": 10.0,
+              "noActionsAtLastPoint": true,
+              "doubleGrid": false
+            }
+          },
+          {
+            "type": "AreaScan",
+            "actions": [],
+            "polygon": {
+              "points": [
+                {
+                  "latitude": 0.9290046860621126,
+                  "longitude": 0.1334729088762906,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290194402248522,
+                  "longitude": 0.13349252773102585,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290180051186536,
+                  "longitude": 0.13349563542329348,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290032509848768,
+                  "longitude": 0.133476016543916,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290046860621126,
+                  "longitude": 0.1334729088762906,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                }
+              ]
+            },
+            "parameters": {
+              "speed": 2.0,
+              "wpTurnType": "STOP_AND_TURN",
+              "height": 5.0,
+              "altitudeType": "AGL",
+              "sideDistance": 2.0,
+              "directionAngle": 38.66327935784735,
+              "avoidObstacles": true,
+              "actionExecution": "ACTIONS_EVERY_POINT",
+              "overshoot": null,
+              "overshootSpeed": null,
+              "areaScanAllowPartialCalculation": false,
+              "tolerance": 10.0,
+              "noActionsAtLastPoint": true,
+              "doubleGrid": false
+            }
+          },
+          {
+            "type": "AreaScan",
+            "actions": [],
+            "polygon": {
+              "points": [
+                {
+                  "latitude": 0.9290161264295935,
+                  "longitude": 0.13349290966779678,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290385180941317,
+                  "longitude": 0.1334561679365058,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290401963010397,
+                  "longitude": 0.13345891680178124,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290178045882993,
+                  "longitude": 0.13349565853495668,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290161264295935,
+                  "longitude": 0.13349290966779678,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                }
+              ]
+            },
+            "parameters": {
+              "speed": 2.0,
+              "wpTurnType": "STOP_AND_TURN",
+              "height": 5.0,
+              "altitudeType": "AGL",
+              "sideDistance": 2.0,
+              "directionAngle": -44.41079670442588,
+              "avoidObstacles": true,
+              "actionExecution": "ACTIONS_EVERY_POINT",
+              "overshoot": null,
+              "overshootSpeed": null,
+              "areaScanAllowPartialCalculation": false,
+              "tolerance": 10.0,
+              "noActionsAtLastPoint": true,
+              "doubleGrid": false
+            }
+          },
+          {
+            "type": "AreaScan",
+            "actions": [],
+            "polygon": {
+              "points": [
+                {
+                  "latitude": 0.9290376776096897,
+                  "longitude": 0.13346131972221376,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290354060232551,
+                  "longitude": 0.1334450532136919,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290376883754107,
+                  "longitude": 0.13344409885078257,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290399599695561,
+                  "longitude": 0.13346036540572767,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290376776096897,
+                  "longitude": 0.13346131972221376,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                }
+              ]
+            },
+            "parameters": {
+              "speed": 2.0,
+              "wpTurnType": "STOP_AND_TURN",
+              "height": 5.0,
+              "altitudeType": "AGL",
+              "sideDistance": 2.0,
+              "directionAngle": 256.999483887412,
+              "avoidObstacles": true,
+              "actionExecution": "ACTIONS_EVERY_POINT",
+              "overshoot": null,
+              "overshootSpeed": null,
+              "areaScanAllowPartialCalculation": false,
+              "tolerance": 10.0,
+              "noActionsAtLastPoint": true,
+              "doubleGrid": false
+            }
+          }
+        ],
+        "takeoffHeight": null,
+        "cornerRadius": 2.0
+      },
+      {
+        "name": "z112.1",
+        "creationTime": 1703088907270,
+        "scheduledTime": 1703088905720,
+        "startDelay": 0.0,
+        "vehicleProfile": "DJI Matrice 300 RTK from import 2024-01-04",
+        "trajectoryType": null,
+        "safeAltitude": 50.0,
+        "maxAltitude": 50.0,
+        "initialSpeed": 2.0,
+        "maxSpeed": 0.0,
+        "failsafes": {
+          "rcLost": "GO_HOME",
+          "gpsLost": null,
+          "lowBattery": null,
+          "datalinkLost": null
+        },
+        "checkAerodromeNfz": true,
+        "checkCustomNfz": false,
+        "segments": [
+          {
+            "type": "AreaScan",
+            "actions": [],
+            "polygon": {
+              "points": [
+                {
+                  "latitude": 0.9290448882914008,
+                  "longitude": 0.13347580164827066,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.929050752934253,
+                  "longitude": 0.13347665210941176,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290506468401337,
+                  "longitude": 0.1334792605041723,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290447821982135,
+                  "longitude": 0.1334784100226925,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290448882914008,
+                  "longitude": 0.13347580164827066,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                }
+              ]
+            },
+            "parameters": {
+              "speed": 12,
+              "wpTurnType": "STOP_AND_TURN",
+              "height": 5,
+              "altitudeType": "AGL",
+              "sideDistance": 2,
+              "directionAngle": 4.9612146464138505,
+              "avoidObstacles": true,
+              "actionExecution": "ACTIONS_EVERY_POINT",
+              "overshoot": null,
+              "overshootSpeed": null,
+              "areaScanAllowPartialCalculation": false,
+              "tolerance": 10.0,
+              "noActionsAtLastPoint": true,
+              "doubleGrid": false
+            }
+          }
+        ],
+        "takeoffHeight": null,
+        "cornerRadius": 2.0
+      },
+      {
+        "name": "z113.1",
+        "creationTime": 1703088907270,
+        "scheduledTime": 1703088905720,
+        "startDelay": 0.0,
+        "vehicleProfile": "DJI Matrice 300 RTK from import 2024-01-04",
+        "trajectoryType": null,
+        "safeAltitude": 50.0,
+        "maxAltitude": 50.0,
+        "initialSpeed": 2.0,
+        "maxSpeed": 0.0,
+        "failsafes": {
+          "rcLost": "GO_HOME",
+          "gpsLost": null,
+          "lowBattery": null,
+          "datalinkLost": null
+        },
+        "checkAerodromeNfz": true,
+        "checkCustomNfz": false,
+        "segments": [
+          {
+            "type": "AreaScan",
+            "actions": [],
+            "polygon": {
+              "points": [
+                {
+                  "latitude": 0.9290329529419027,
+                  "longitude": 0.13350534524397584,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290395678715723,
+                  "longitude": 0.13351936811111925,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.929037744204221,
+                  "longitude": 0.13352184632461278,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290311292912228,
+                  "longitude": 0.1335078234691486,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290329529419027,
+                  "longitude": 0.13350534524397584,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                }
+              ]
+            },
+            "parameters": {
+              "speed": 12,
+              "wpTurnType": "STOP_AND_TURN",
+              "height": 5,
+              "altitudeType": "AGL",
+              "sideDistance": 2,
+              "directionAngle": 51.886914278814885,
+              "avoidObstacles": true,
+              "actionExecution": "ACTIONS_EVERY_POINT",
+              "overshoot": null,
+              "overshootSpeed": null,
+              "areaScanAllowPartialCalculation": false,
+              "tolerance": 10.0,
+              "noActionsAtLastPoint": true,
+              "doubleGrid": false
+            }
+          },
+          {
+            "type": "AreaScan",
+            "actions": [],
+            "polygon": {
+              "points": [
+                {
+                  "latitude": 0.9290395031401721,
+                  "longitude": 0.13351827384640017,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290319491882264,
+                  "longitude": 0.1335411695364436,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290298702710025,
+                  "longitude": 0.13353933244630156,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290374242031599,
+                  "longitude": 0.13351643680200814,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290395031401721,
+                  "longitude": 0.13351827384640017,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                }
+              ]
+            },
+            "parameters": {
+              "speed": 12,
+              "wpTurnType": "STOP_AND_TURN",
+              "height": 5,
+              "altitudeType": "AGL",
+              "sideDistance": 2,
+              "directionAngle": 119.01545819567806,
+              "avoidObstacles": true,
+              "actionExecution": "ACTIONS_EVERY_POINT",
+              "overshoot": null,
+              "overshootSpeed": null,
+              "areaScanAllowPartialCalculation": false,
+              "tolerance": 10.0,
+              "noActionsAtLastPoint": true,
+              "doubleGrid": false
+            }
+          },
+          {
+            "type": "AreaScan",
+            "actions": [],
+            "polygon": {
+              "points": [
+                {
+                  "latitude": 0.9290317236170502,
+                  "longitude": 0.13353578060059176,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290375975227158,
+                  "longitude": 0.13354981192732407,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290356917740932,
+                  "longitude": 0.13355211221936686,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290298178839514,
+                  "longitude": 0.1335380809097616,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290317236170502,
+                  "longitude": 0.13353578060059176,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                }
+              ]
+            },
+            "parameters": {
+              "speed": 12,
+              "wpTurnType": "STOP_AND_TURN",
+              "height": 5,
+              "altitudeType": "AGL",
+              "sideDistance": 2,
+              "directionAngle": 55.16492637013901,
+              "avoidObstacles": true,
+              "actionExecution": "ACTIONS_EVERY_POINT",
+              "overshoot": null,
+              "overshootSpeed": null,
+              "areaScanAllowPartialCalculation": false,
+              "tolerance": 10.0,
+              "noActionsAtLastPoint": true,
+              "doubleGrid": false
+            }
+          }
+        ],
+        "takeoffHeight": null,
+        "cornerRadius": 2.0
+      },
+      {
+        "name": "z114.1",
+        "creationTime": 1703088907270,
+        "scheduledTime": 1703088905720,
+        "startDelay": 0.0,
+        "vehicleProfile": "DJI Matrice 300 RTK from import 2024-01-04",
+        "trajectoryType": null,
+        "safeAltitude": 50.0,
+        "maxAltitude": 50.0,
+        "initialSpeed": 2.0,
+        "maxSpeed": 0.0,
+        "failsafes": {
+          "rcLost": "GO_HOME",
+          "gpsLost": null,
+          "lowBattery": null,
+          "datalinkLost": null
+        },
+        "checkAerodromeNfz": true,
+        "checkCustomNfz": false,
+        "segments": [
+          {
+            "type": "AreaScan",
+            "actions": [],
+            "polygon": {
+              "points": [
+                {
+                  "latitude": 0.9290247299902233,
+                  "longitude": 0.1335045894762672,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290169520806877,
+                  "longitude": 0.1335316485338423,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290148120134055,
+                  "longitude": 0.13353001810850512,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290225899022706,
+                  "longitude": 0.13350295911208115,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                },
+                {
+                  "latitude": 0.9290247299902233,
+                  "longitude": 0.1335045894762672,
+                  "altitude": 0,
+                  "altitudeType": "AGL"
+                }
+              ]
+            },
+            "parameters": {
+              "speed": 12,
+              "wpTurnType": "STOP_AND_TURN",
+              "height": 5,
+              "altitudeType": "AGL",
+              "sideDistance": 2,
+              "directionAngle": 115.649141804822,
+              "avoidObstacles": true,
+              "actionExecution": "ACTIONS_EVERY_POINT",
+              "overshoot": null,
+              "overshootSpeed": null,
+              "areaScanAllowPartialCalculation": false,
+              "tolerance": 10.0,
+              "noActionsAtLastPoint": true,
+              "doubleGrid": false
+            }
+          }
+        ],
+        "takeoffHeight": null,
+        "cornerRadius": 2.0
+      }
+    ],
+    "vehicles": []
+  }
+}

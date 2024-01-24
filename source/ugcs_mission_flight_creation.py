@@ -6,7 +6,14 @@ import os
 import numpy
 import geopandas
 import pandas as pd
+from qgis.core import QgsVectorLayer
 
+
+DEFAULT_HEIGHT = 10
+DEFAULT_SPEED = 3
+DEFAULT_SIDE = 2.5
+DEFAULT_WIDTH = 17.5
+DEFAULT_EPSG = 3857
 
 
 def get_mission_template(path_template_mission):
@@ -49,6 +56,26 @@ def add_segment(route, segment):
     return route
 
 
+def add_waypoint(route, first_segment):
+    point = first_segment["polygon"]["points"][0]
+    return {
+        "type" : "Waypoint",
+        "actions" : [ ],
+        "point" : {
+          "latitude" : point["latitude"],
+          "longitude" : point["longitude"],
+          "altitude" : DEFAULT_HEIGHT,
+          "altitudeType" : "AGL"},
+        "parameters" : {
+          "avoidObstacles" : True,
+          "avoidTerrain" : True,
+          "speed" : DEFAULT_SPEED + 0.1,
+          "wpTurnType" : "STOP_AND_TURN",
+          "altitudeType" : "AGL",
+          "cornerRadius" : None}
+    }
+
+
 def add_point(segment, point):
     segment["polygon"]["points"].append(point)
     return segment
@@ -64,11 +91,11 @@ def create_point(x, y, path_template_mission, z=0):
 
 def create_segment(points, azimuth, speed, height, side, path_template_mission):
     if speed is None or pd.isnull(speed):
-        speed = 12
+        speed = DEFAULT_SPEED
     if height is None or pd.isnull(height):
-        height = 5
+        height = DEFAULT_HEIGHT
     if side is None or pd.isnull(side):
-        side = 2
+        side = DEFAULT_SIDE
     segment = get_segment_template(path_template_mission)
     segment["polygon"]["points"] = points
     segment["parameters"]["directionAngle"] = azimuth
@@ -81,7 +108,7 @@ def create_segment(points, azimuth, speed, height, side, path_template_mission):
 def create_route(segments, name, path_template_mission):
     route = get_route_template(path_template_mission)
     route["name"] = name
-    route["segments"] = segments
+    route["segments"] = [add_waypoint(route, segments[0])] + segments
     return route
 
 
@@ -93,13 +120,13 @@ def create_mission(routes, path_template_mission):
 
 def create_polygon(point_start, point_end, width, elbow_start, elbow_end, epsg_projection):
     if width is None or pd.isnull(width):
-        width = 15
+        width = DEFAULT_WIDTH
     x1, y1 = point_start
     x2, y2 = point_end
 
     # Azimuth in UGCS are calculated using pseudo mercator projection
-    xa1, ya1 = reproject(x1, y1, epsg_projection, 3857)
-    xa2, ya2 = reproject(x2, y2, epsg_projection, 3857)
+    xa1, ya1 = reproject(x1, y1, epsg_projection, DEFAULT_EPSG)
+    xa2, ya2 = reproject(x2, y2, epsg_projection, DEFAULT_EPSG)
     dx = xa2 - xa1
     dy = ya2 - ya1
     angle = math.atan2(dy, dx)
@@ -196,7 +223,7 @@ def main(path_export_mission, path_gpkg, path_template_mission, width=None, spee
         mission_routes.append(
             create_route(
                 mission_segments,
-                f"z{j+1}.1",
+                f"z{attributes.get('fid')[j]}.1",
                 path_template_mission
             )
         )
@@ -211,25 +238,26 @@ def gpkg_to_route(path_gpkg):
     if unit not in ["meter", "metre"]:
         raise Exception(f"Only projected EPSG in meters, not {unit} from {epsg_from}")
     routes = []
-    for line in data.geometry:
+    for i, line in enumerate(data.geometry):
+        print(i, line)
+        if line is None:
+            continue
         x, y = line.xy
         route = numpy.array([x, y]).T
         routes.append(route)
     attributes = {}
     for col in data.columns.drop('geometry'):
         attributes[col] = list(data[col])
+    attributes["fid"] = [feature["fid"] for feature in QgsVectorLayer(path_gpkg).getFeatures()]
     return routes, int(epsg_from[len("EPSG:"):]), attributes
 
 
-if __name__ == "__main__":
-    main(
-        path_export_mission=
-            # os.path.join(os.path.dirname(__file__), "mission_ugcs.json")
-            r"C:\Users\VincentBenet\Desktop\mission.json"
-        ,
-        path_gpkg=
-            # os.path.join(os.path.dirname(__file__), "ugcs_mission_flight_creation.gpkg")
-            r"C:\Users\VincentBenet\Desktop\bla.gpkg"
-        ,
-        path_template_mission=os.path.join(os.path.dirname(__file__), "template_ugcs_mission_4.20.json")
-    )
+# main(
+    # path_export_mission=
+        # os.path.join(os.path.dirname(__file__), "mission_ugcs.json")
+    # ,
+    # path_gpkg=
+        # os.path.join(os.path.dirname(__file__), "ugcs_mission_flight_creation.gpkg")
+    # ,
+    # path_template_mission=os.path.join(os.path.dirname(__file__), "template_ugcs_mission_4.20.json")
+# )

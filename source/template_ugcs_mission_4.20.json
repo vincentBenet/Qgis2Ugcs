@@ -216,7 +216,7 @@
     }
   } ],
   "vehicleProfiles" : [ {
-    "name" : "DJI Matrice 300 RTK from import 2024-01-04",
+    "name" : "DJI Matrice 300 RTK",
     "vehicleType" : "MULTICOPTER",
     "modelKey" : "dji_matrice_300",
     "imageKey" : "dji_matrice_300",
@@ -272,24 +272,48 @@
       "normalBatteryPowerLevel" : 40.0,
       "maxRangefinderDistance" : 30.0,
       "minDistanceBetweenWaypoint" : 1.0,
-      "initialSpeed" : 2.0,
+      "initialSpeed" : 5.0,
       "waypointMaxWaitTime" : 25.5,
       "cornerRadius" : 20.0
     }
   } ],
-  "vehicles" : [ ],
+  "vehicles" : [ {
+    "name" : "M300RTK-1znbk4n00c007v",
+    "vehicleId" : 2122726426,
+    "icaoAddress" : null,
+    "tailNumber" : null,
+    "type" : "MULTICOPTER",
+    "platformCode" : "DjiMatrice300RTK",
+    "profile" : "DJI Matrice 300 RTK",
+    "emulator" : false,
+    "serialNumber" : "1znbk4n00c007v",
+    "port" : null,
+    "source" : "VSM"
+  }, {
+    "name" : "M300RTK-1znbkc900c00em",
+    "vehicleId" : 3022375043,
+    "icaoAddress" : null,
+    "tailNumber" : null,
+    "type" : "MULTICOPTER",
+    "platformCode" : "DjiMatrice300RTK",
+    "profile" : "DJI Matrice 300 RTK",
+    "emulator" : false,
+    "serialNumber" : "1znbkc900c00em",
+    "port" : null,
+    "source" : "VSM"
+  } ],
   "mission" : {
-    "name" : "Mission (import 2024/01/05 10:01:00) (import 2024/01/05 11:31:31)",
+    "name" : "Mission of 1/9/2024 2:00 PM",
     "description" : null,
-    "creationTime" : 1703088883036,
+    "creationTime" : 1704826846484,
     "routes" : [ {
-      "name" : "z1.1",
-      "creationTime" : 1703088907270,
-      "scheduledTime" : 1703088905720,
+      "name" : "Route 1",
+      "creationTime" : 1705841569466,
+      "scheduledTime" : 1705841567875,
       "startDelay" : 0.0,
-      "vehicleProfile" : "DJI Matrice 300 RTK from import 2024-01-04",
+      "vehicleProfile" : "DJI Matrice 300 RTK",
       "trajectoryType" : null,
-      "safeAltitude" : 50.0,
+      "safeAltitude" : 40.0,
       "maxAltitude" : 50.0,
       "initialSpeed" : 2.0,
       "maxSpeed" : 0.0,
@@ -300,45 +324,45 @@
         "datalinkLost" : null
       },
       "checkAerodromeNfz" : true,
-      "checkCustomNfz" : false,
+      "checkCustomNfz" : true,
       "segments" : [ {
         "type" : "AreaScan",
         "actions" : [ ],
         "polygon" : {
           "points" : [ {
-            "latitude" : 0.9293540216034026,
-            "longitude" : 0.1332410970758136,
+            "latitude" : 0.928786353205322,
+            "longitude" : 0.1342743922651223,
             "altitude" : 0.0,
             "altitudeType" : "AGL"
           }, {
-            "latitude" : 0.9293528122670329,
-            "longitude" : 0.1332625648001461,
+            "latitude" : 0.9287921638409302,
+            "longitude" : 0.13428860873396758,
             "altitude" : 0.0,
             "altitudeType" : "AGL"
           }, {
-            "latitude" : 0.9293500102599435,
-            "longitude" : 0.13326212392519424,
+            "latitude" : 0.9287742257006792,
+            "longitude" : 0.13432013297976805,
             "altitude" : 0.0,
             "altitudeType" : "AGL"
           }, {
-            "latitude" : 0.9293512196008504,
-            "longitude" : 0.13324065620086178,
+            "latitude" : 0.9287688958178699,
+            "longitude" : 0.13430654828784316,
             "altitude" : 0.0,
             "altitudeType" : "AGL"
           }, {
-            "latitude" : 0.9293540216034026,
-            "longitude" : 0.1332410970758136,
+            "latitude" : 0.928786353205322,
+            "longitude" : 0.1342743922651223,
             "altitude" : 0.0,
             "altitudeType" : "AGL"
           } ]
         },
         "parameters" : {
-          "speed" : 2.0,
+          "speed" : 3.0,
           "wpTurnType" : "STOP_AND_TURN",
-          "height" : 6.0,
-          "altitudeType" : "AGL",
-          "sideDistance" : 2.0,
-          "directionAngle" : 95.4,
+          "height" : 10.0,
+          "altitudeType" : "WGS84",
+          "sideDistance" : 2.5,
+          "directionAngle" : 135.325134277344,
           "avoidObstacles" : true,
           "actionExecution" : "ACTIONS_EVERY_POINT",
           "overshoot" : null,
@@ -352,6 +376,6 @@
       "takeoffHeight" : null,
       "cornerRadius" : 2.0
     } ],
-    "vehicles" : [ ]
+    "vehicles" : [ "M300RTK-1znbk4n00c007v", "M300RTK-1znbkc900c00em" ]
   }
 }

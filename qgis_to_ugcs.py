@@ -189,9 +189,8 @@ class QgisToUGCS:
         if self.first_start == True:
             self.first_start = False
             self.dlg = QgisToUGCSDialog()
-
-        # show the dialog
-        load_ui.main(self.dlg)
+            load_ui.main(self.dlg)
+        load_ui.combo_boxs(self.dlg)
         self.dlg.show()
         # Run the dialog event loop
         result = self.dlg.exec_()

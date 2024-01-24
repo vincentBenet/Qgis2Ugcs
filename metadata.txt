@@ -10,10 +10,13 @@ tracker=https://github.com/vincentBenet/QGIS-plugin_qgis-to-ugcs/issues
 repository=https://github.com/vincentBenet/QGIS-plugin_qgis-to-ugcs
 
 description=
-	A Plugin to create UGCS missions from GPKG layers
+	A Plugin to create UGCS missions from GPKG layers.
+	This is made for drone users that want to lead AreaScan for a drone-line inspection
 about=
-	This plugin aim to create entires UGCS missions from a GIS layer GPKG file. 
-	So it is much faster and can be automated.
+	This plugin aim to create entires UGCS missions from a GIS layer GPKG file.
+	So it is much faster than doing it directely on UGCS software and can be automated.
+	The symbology able to have an idea of the flight time on QGIS without waiting the route to be processed.
+	The user don t need to match azimuth with flight plan limit (very long to do).
 
 changelog=
 	Version 1.2
